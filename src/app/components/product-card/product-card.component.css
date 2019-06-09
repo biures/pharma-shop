@@ -1,0 +1,16 @@
+.product-card {
+  background-color: aquamarine;
+  height: 250px;
+  width: 205px;
+}
+
+.product-image {
+  background-image: url("https://picsum.photos/200");
+  height: 200px;
+  width: 200px;
+}
+
+.product-details {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

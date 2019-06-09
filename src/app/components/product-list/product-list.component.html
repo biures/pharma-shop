@@ -1,0 +1,8 @@
+<div class="product-list-container"
+     fxLayout="row wrap"
+     fxLayoutAlign="space-around left"
+     fxLayoutGap="10px grid">
+  <div *ngFor="let product of productList">
+    <pharma-product-card [product]="product"></pharma-product-card>
+  </div>
+</div>
