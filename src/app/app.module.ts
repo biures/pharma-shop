@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
-import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
 import { FlexModule } from '@angular/flex-layout';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
@@ -21,7 +21,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    FlexModule
+    FlexModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,11 @@
-<div class="product-card" fxLayout="column" fxLayoutAlign="center center">
+<mat-card class="product-card" fxLayout="row" fxLayoutAlign="center center">
   <div class="product-image"></div>
-
   <div class="product-details" fxLayout="column" fxLayoutAlign="center center">
-    <span>Nume: {{ product.name }}</span>
-    <span>Tip: {{ product.type }}</span>
-    <span>Pret: {{ product.price }}</span>
+    <mat-card-title>Nume: {{ product.name }}</mat-card-title>
+    <mat-card-content>Tip: {{ product.type }}</mat-card-content>
+    <mat-card-content>Pret: {{ product.price }}</mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary">ADAUGA</button>
+    </mat-card-actions>
   </div>
-</div>
+</mat-card>

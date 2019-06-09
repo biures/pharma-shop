@@ -4,7 +4,7 @@ import { Product } from '../../models/product.model';
 @Component({
   selector: 'pharma-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.css']
+  styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent {
 

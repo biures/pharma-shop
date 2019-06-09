@@ -1,8 +1,11 @@
-<div class="product-list-container"
+<div class="product-list"
      fxLayout="row wrap"
-     fxLayoutAlign="space-around left"
-     fxLayoutGap="10px grid">
-  <div *ngFor="let product of productList">
-    <pharma-product-card [product]="product"></pharma-product-card>
+     fxLayoutAlign="center">
+  <div class="product-list-container"
+    fxLayout="row wrap"
+    fxLayoutAlign="start">
+    <div *ngFor="let product of productList">
+      <pharma-product-card [product]="product"></pharma-product-card>
+    </div>
   </div>
 </div>
