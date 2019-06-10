@@ -5,6 +5,7 @@ export enum ProductActionTypes {
   LoadProducts = '[Product] Load Products',
   LoadProductsSuccess = '[Product] Load Products Success',
   LoadProductsFail = '[Product] Load Products Fail',
+  ChangeSearchQuery = '[Product] Change search query'
 }
 
 export class LoadProducts implements Action {
@@ -25,7 +26,15 @@ export class LoadProductsFail implements Action {
   }
 }
 
+export class ChangeSearchQuery implements Action {
+  readonly type = ProductActionTypes.ChangeSearchQuery;
+
+  constructor(public searchQuery: string) {
+  }
+}
+
 export type ProductActions =
   LoadProducts |
   LoadProductsSuccess |
-  LoadProductsFail;
+  LoadProductsFail |
+  ChangeSearchQuery;

@@ -6,7 +6,9 @@ import { ProductState } from '../reducers';
 export const adapter: EntityAdapter<Product> =
   createEntityAdapter<Product>();
 
-export const initialState: ProductState = adapter.getInitialState();
+export const initialState: ProductState = adapter.getInitialState({
+  searchQuery: undefined
+});
 
 export function ProductReducers(state = initialState, action: ProductActions): ProductState {
   switch (action.type) {
@@ -19,6 +21,9 @@ export function ProductReducers(state = initialState, action: ProductActions): P
 
     case ProductActionTypes.LoadProductsFail:
       return state;
+
+    case ProductActionTypes.ChangeSearchQuery:
+      return {...state, searchQuery: action.searchQuery};
 
     default:
       return state;

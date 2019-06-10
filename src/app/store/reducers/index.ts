@@ -15,7 +15,7 @@ export interface AppState {
 }
 
 export interface ProductState extends EntityState<Product> {
-
+  searchQuery: string;
 }
 
 

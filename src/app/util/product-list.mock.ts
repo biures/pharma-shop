@@ -17,7 +17,8 @@ export const mockedProducts: Product[] = [
     id: 3,
     name: 'Produsul 3',
     type: 'Alergii',
-    price: '11'
+    price: '11',
+    discount: 0.2
   },
   {
     id: 4,
@@ -29,13 +30,15 @@ export const mockedProducts: Product[] = [
     id: 5,
     name: 'Produsul 5',
     type: 'Tiroida',
-    price: '56'
+    price: '56',
+    discount: 0.1
   },
   {
     id: 6,
     name: 'Produsul 6',
     type: 'Antipsihotic',
-    price: '75'
+    price: '75',
+    discount: 0.05
   },
   {
     id: 7,
@@ -77,7 +80,8 @@ export const mockedProducts: Product[] = [
     id: 13,
     name: 'Produsul 13',
     type: 'Anti-inflamator',
-    price: '25'
+    price: '25',
+    discount: 0.3
   },
   {
     id: 14,
@@ -95,7 +99,8 @@ export const mockedProducts: Product[] = [
     id: 16,
     name: 'Produsul 16',
     type: 'Inima',
-    price: '150'
+    price: '150',
+    discount: 0.12
   },
   {
     id: 17,

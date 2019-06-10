@@ -8,8 +8,14 @@ import { Product } from '../../models/product.model';
 })
 export class ProductCardComponent {
 
+  isFav = false;
+
   @Input()
   public product: Product;
+
+  toggleFav() {
+    this.isFav = !this.isFav;
+  }
 
   constructor() {
   }
