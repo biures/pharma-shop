@@ -9,9 +9,9 @@
 
   <div class="product-details" fxLayout="column" fxLayoutAlign="center center">
 
-    <mat-card-title>Nume: {{ product.name }}</mat-card-title>
-    <mat-card-content>Tip: {{ product.type }}</mat-card-content>
-    <mat-card-content>Pret: {{ product.price }}</mat-card-content>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-content>{{ product.type }}</mat-card-content>
+    <mat-card-content class="price-content">{{ product.price | number: '.1-3'}} Lei</mat-card-content>
 
     <mat-card-actions>
       <button mat-stroked-button color="primary">ADAUGA</button>
