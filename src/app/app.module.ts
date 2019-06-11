@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import {
+  MatAutocompleteModule,
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule, MatIconModule,
@@ -22,6 +23,7 @@ import { environment } from '../environments/environment';
 import { ProductEffects } from './store/product/product.effects';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
