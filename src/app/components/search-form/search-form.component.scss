@@ -1,0 +1,16 @@
+.search-box-container {
+  width: 500px;
+}
+
+::ng-deep .search-box-container .mat-form-field-infix {
+  border-top: none;
+  margin-top: 5px;
+}
+
+::ng-deep .mat-form-field-suffix {
+  top: 7px !important;
+}
+
+::ng-deep .mat-form-field-suffix:hover {
+  cursor: pointer;
+}

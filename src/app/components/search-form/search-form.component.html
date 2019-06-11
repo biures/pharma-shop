@@ -1,0 +1,6 @@
+<div class="search-box">
+  <mat-form-field appearance="outline" class="search-box-container">
+    <input #searchInput matInput placeholder="Cautarea dvs." (keydown.enter)="addSearchQuery(searchInput.value)">
+    <mat-icon matSuffix (click)="addSearchQuery(searchInput.value)">search</mat-icon>
+  </mat-form-field>
+</div>
