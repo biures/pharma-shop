@@ -10,6 +10,7 @@
   </mat-form-field>
 
   <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let productName of filteredOptions | async" [value]="productName">{{ productName }}</mat-option>
+    <mat-option *ngFor="let productName of filteredOptions | async" [value]="productName"
+    (click)="addSearchQuery(productName)">{{ productName }}</mat-option>
   </mat-autocomplete>
 </div>

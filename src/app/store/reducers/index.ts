@@ -15,9 +15,11 @@ export interface AppState {
 }
 
 export interface ProductState extends EntityState<Product> {
-  searchQuery: string;
+  filtering: {
+    searchQuery: string;
+    categories: string[];
+  };
 }
-
 
 export const reducers: ActionReducerMap<AppState> = {
   productsState: ProductReducers

@@ -6,7 +6,7 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import {
   MatAutocompleteModule,
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatCheckboxModule,
   MatFormFieldModule, MatIconModule,
   MatInputModule,
   MatMenuModule,
@@ -24,6 +24,7 @@ import { ProductEffects } from './store/product/product.effects';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MainMenuComponent,
     ProductCardComponent,
     ProductListComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

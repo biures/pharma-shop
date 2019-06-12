@@ -4,7 +4,9 @@ import { AppState } from '../reducers';
 
 export const selectProductState = (state: AppState) => state.productsState;
 
-export const getSearchQuery = (state: AppState) => state.productsState.searchQuery;
+export const getSearchQuery = (state: AppState) => state.productsState.filtering.searchQuery;
+
+export const selectCategories = (state: AppState) => state.productsState.filtering.categories;
 
 export const selectAllProducts = createSelector(
   selectProductState,
@@ -18,10 +20,30 @@ export const selectAllProductsBasedOnQuery = createSelector(
       return allProducts;
     } else {
       return allProducts.filter(product => (
-          product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          product.type.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-      );
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchQuery.toLowerCase())
+      ));
     }
+  }
+);
+
+export const selectAllProductsBasedOnCategories = createSelector(
+  [selectAllProductsBasedOnQuery, selectCategories],
+  (products, categories) => {
+    if (categories === undefined || categories.length === 0) {
+      return products;
+    } else {
+      let filteredProducts = [];
+      categories.forEach(category => {
+        filteredProducts = filteredProducts.concat(products.filter(product => product.category === category));
+      });
+      return filteredProducts;
+    }
+  }
+);
+
+export const selectProductCategories = createSelector(
+  selectAllProductsBasedOnQuery, products => {
+    return [...new Set(products.map(product => product.category))];
   }
 );

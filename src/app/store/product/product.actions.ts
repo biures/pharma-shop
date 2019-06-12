@@ -5,6 +5,8 @@ export enum ProductActionTypes {
   LoadProducts = '[Product] Load Products',
   LoadProductsSuccess = '[Product] Load Products Success',
   LoadProductsFail = '[Product] Load Products Fail',
+  AddCategoryFilter = '[Product] Add Category Filter',
+  RemoveCategoryFilter = '[Product] Remove Category Filter',
   ChangeSearchQuery = '[Product] Change search query'
 }
 
@@ -33,8 +35,24 @@ export class ChangeSearchQuery implements Action {
   }
 }
 
+export class AddCategoryFilter implements Action {
+  readonly type = ProductActionTypes.AddCategoryFilter;
+
+  constructor(public category: string){
+  }
+}
+
+export class RemoveCategoryFilter implements Action {
+  readonly type = ProductActionTypes.RemoveCategoryFilter;
+
+  constructor(public category: string){
+  }
+}
+
 export type ProductActions =
   LoadProducts |
   LoadProductsSuccess |
   LoadProductsFail |
-  ChangeSearchQuery;
+  ChangeSearchQuery |
+  AddCategoryFilter |
+  RemoveCategoryFilter;

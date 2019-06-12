@@ -1,4 +1,4 @@
-import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 import { Product } from '../../models/product.model';
 import { ProductActions, ProductActionTypes } from './product.actions';
 import { ProductState } from '../reducers';
@@ -7,7 +7,10 @@ export const adapter: EntityAdapter<Product> =
   createEntityAdapter<Product>();
 
 export const initialState: ProductState = adapter.getInitialState({
-  searchQuery: undefined
+  filtering: {
+    searchQuery: undefined,
+    categories: []
+  }
 });
 
 export function ProductReducers(state = initialState, action: ProductActions): ProductState {
@@ -23,7 +26,19 @@ export function ProductReducers(state = initialState, action: ProductActions): P
       return state;
 
     case ProductActionTypes.ChangeSearchQuery:
-      return {...state, searchQuery: action.searchQuery};
+      return {...state, filtering: {...state.filtering, searchQuery: action.searchQuery }};
+
+    case ProductActionTypes.AddCategoryFilter: {
+      const updatedCategories: string[] = state.filtering.categories.slice();
+      updatedCategories.push(action.category);
+      return {...state, filtering: {...state.filtering, categories: updatedCategories }};
+    }
+
+    case ProductActionTypes.RemoveCategoryFilter: {
+      let updatedCategories: string[];
+      updatedCategories = state.filtering.categories.filter(category => category !== action.category);
+      return {...state, filtering: {...state.filtering, categories: updatedCategories }};
+    }
 
     default:
       return state;
