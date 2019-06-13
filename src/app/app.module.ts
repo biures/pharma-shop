@@ -6,7 +6,7 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import {
   MatAutocompleteModule,
   MatButtonModule,
-  MatCardModule, MatCheckboxModule,
+  MatCardModule, MatCheckboxModule, MatDividerModule,
   MatFormFieldModule, MatIconModule,
   MatInputModule,
   MatMenuModule,
@@ -51,7 +51,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
     BrowserAnimationsModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { LoadProducts, LoadProductsFail, LoadProductsSuccess, ProductActionTypes } from './product.actions';
 import { map } from 'rxjs/operators';
-import { mockedProducts } from '../../util/product-list.mock';
+import { mockedProducts } from '../../mocks/product-list.mock';
 
 @Injectable()
 export class ProductEffects {
