@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AppState } from '../../store/reducers';
+import { AppState } from '../../../store/reducers';
 import { Store } from '@ngrx/store';
-import { ChangeSearchQuery } from '../../store/product/product.actions';
-import { selectAllProducts } from '../../store/product/product.selectors';
+import { ChangeSearchQuery } from '../../../store/product/product.actions';
+import { selectAllProducts } from '../../../store/product/product.selectors';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
