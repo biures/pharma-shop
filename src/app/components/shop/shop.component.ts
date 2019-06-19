@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadProducts } from '../../store/product/product.actions';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../store/reducers';
+import { AppState } from '../../store';
 
 @Component({
   selector: 'pharma-shop',

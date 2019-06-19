@@ -1,6 +1,6 @@
 import * as fromProducts from './../product/product.reducer';
 import { createSelector } from '@ngrx/store';
-import { AppState } from '../reducers';
+import { AppState } from '../index';
 
 export const selectProductState = (state: AppState) => state.productsState;
 

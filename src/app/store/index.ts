@@ -5,10 +5,10 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
-import { environment } from '../../../environments/environment';
-import { ProductReducers } from '../product/product.reducer';
+import { environment } from '../../environments/environment';
+import { ProductReducers } from './product/product.reducer';
 import { EntityState } from '@ngrx/entity';
-import { Product } from '../../models/product.model';
+import { Product } from '../models/product.model';
 
 export interface AppState {
   productsState: ProductState;

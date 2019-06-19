@@ -1,0 +1,14 @@
+@import './src/app/colors';
+
+.vl {
+  margin-right: 10px;
+  margin-top: -42px;
+  margin-left: 10px;
+  border-left: 2px solid $purple-lines;
+  height: 1110px;
+}
+
+.hl {
+  border-top: 2px solid $purple-lines;
+  width: 100%;
+}

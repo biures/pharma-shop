@@ -1,7 +1,7 @@
 import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 import { Product } from '../../models/product.model';
 import { ProductActions, ProductActionTypes } from './product.actions';
-import { ProductState } from '../reducers';
+import { ProductState } from '../index';
 
 export const adapter: EntityAdapter<Product> =
   createEntityAdapter<Product>();

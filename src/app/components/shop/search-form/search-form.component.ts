@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppState } from '../../../store/reducers';
+import { AppState } from '../../../store';
 import { Store } from '@ngrx/store';
 import { ChangeSearchQuery } from '../../../store/product/product.actions';
 import { selectAllProducts } from '../../../store/product/product.selectors';
@@ -26,7 +26,7 @@ export class SearchFormComponent implements OnInit {
       .pipe(
         startWith(''),
         map(value => this._filter(value))
-      )
+      );
 
     this.store.select(selectAllProducts)
       .pipe(

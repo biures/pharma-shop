@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../models/product.model';
-import { AppState } from '../../../store/reducers';
+import { AppState } from '../../../store';
 import { Store } from '@ngrx/store';
 import { selectAllProductsBasedOnCategories } from '../../../store/product/product.selectors';
 
