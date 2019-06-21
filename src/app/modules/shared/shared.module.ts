@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SearchFormComponent } from '../../components/shop/search-form/search-form.component';
 import { MainMenuComponent } from '../../components/shop/main-menu/main-menu.component';
 import {
-  MatAutocompleteModule,
+  MatAutocompleteModule, MatBadgeModule,
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
@@ -18,11 +18,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { ToolboxComponent } from '../../components/shared/toolbox/toolbox.component';
 
 @NgModule({
   declarations: [
     SearchFormComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    ToolboxComponent
   ],
   imports: [
     CommonModule,
@@ -39,12 +41,14 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
+    MatBadgeModule,
     FlexModule,
     RouterModule
   ],
   exports: [
     SearchFormComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    ToolboxComponent
   ]
 })
 export class SharedModule {

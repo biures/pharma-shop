@@ -1,9 +1,14 @@
-<mat-card *ngIf="productCategories.length > 0" class="categories-card">
-  <mat-card-content>
-    <h2>Categories</h2>
-    <div *ngFor="let category of productCategories">
-      <mat-checkbox color="primary" (change)="checkCategory($event, category)">{{ category }}</mat-checkbox>
-      <br>
-    </div>
-  </mat-card-content>
-</mat-card>
+<mat-expansion-panel
+  *ngIf="productCategories.length > 0"
+  [expanded]="true"
+  class="categories-card">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Categories
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div *ngFor="let category of productCategories">
+    <mat-checkbox color="primary" (change)="checkCategory($event, category)">{{ category }}</mat-checkbox>
+    <br>
+  </div>
+</mat-expansion-panel>

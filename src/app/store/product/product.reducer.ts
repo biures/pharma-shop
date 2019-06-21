@@ -1,10 +1,16 @@
-import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Product } from '../../models/product.model';
 import { ProductActions, ProductActionTypes } from './product.actions';
-import { ProductState } from '../index';
 
 export const adapter: EntityAdapter<Product> =
   createEntityAdapter<Product>();
+
+export interface ProductState extends EntityState<Product> {
+  filtering: {
+    searchQuery: string;
+    categories: string[];
+  };
+}
 
 export const initialState: ProductState = adapter.getInitialState({
   filtering: {

@@ -12,7 +12,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
-  MatDividerModule,
+  MatDividerModule, MatExpansionModule,
   MatIconModule,
   MatInputModule,
   MatMenuModule,
@@ -46,7 +46,8 @@ import { shopRoutes } from './shop.routes';
     BrowserModule,
     BrowserAnimationsModule,
     FlexModule,
-    RouterModule.forChild(shopRoutes)
+    RouterModule.forChild(shopRoutes),
+    MatExpansionModule
   ],
   exports: [
     ProductCardComponent,

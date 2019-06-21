@@ -1,0 +1,28 @@
+<div class="toolbox-group" fxLayout="row" fxLayoutAlign="center center">
+  <div class="toolbox-account" fxLayout="row" fxLayoutAlign="center center">
+    <button mat-button>
+      <mat-icon>perm_identity</mat-icon>
+      Contul Meu
+    </button>
+  </div>
+
+  <div class="toolbox-products" fxLayout="row" fxLayoutAlign="center center">
+    <button mat-button>
+      <mat-icon
+        [matBadge]="favoritesCount | async"
+        matBadgeSize="small"
+        class="toolbox-icon">favorite</mat-icon>
+      Favorite
+    </button>
+
+    <button mat-button>
+      <mat-icon
+        [matBadge]="cartCount | async"
+        [matBadgeHidden]="(cartCount | async) <= 0"
+        matBadgeSize="small"
+        matBadgeColor="warn"
+        class="toolbox-icon">shopping_cart</mat-icon>
+      Cosul Meu
+    </button>
+  </div>
+</div>

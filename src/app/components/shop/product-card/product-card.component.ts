@@ -1,5 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../../models/product.model';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../store';
+import { AddProductToFavoritesAction, RemoveProductFromFavoritesAction } from '../../../store/favorites/favorite.actions';
+import { AddProductToCartAction } from '../../../store/cart/cart.actions';
 
 @Component({
   selector: 'pharma-product-card',
@@ -14,9 +18,18 @@ export class ProductCardComponent {
   public product: Product;
 
   toggleFav() {
+    if (!this.isFav) {
+      this.store.dispatch(new AddProductToFavoritesAction(this.product));
+    } else {
+      this.store.dispatch(new RemoveProductFromFavoritesAction(this.product));
+    }
     this.isFav = !this.isFav;
   }
 
-  constructor() {
+  addToCart() {
+    this.store.dispatch(new AddProductToCartAction(this.product));
+  }
+
+  constructor(public store: Store<AppState>) {
   }
 }

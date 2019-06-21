@@ -1,12 +1,15 @@
-<div fxLayout="row" fxLayoutAlign="center">
-  <pharma-search-form></pharma-search-form>
-</div>
-
-<div fxLayout="row" fxLayoutAlign="center center">
-  <div class="hl"></div>
-  <pharma-main-menu></pharma-main-menu>
-  <div class="hl"></div>
-</div>
-<div fxLayout="row" fxLayoutALign="center center">
-  <router-outlet></router-outlet>
+<div fxLayout="column" fxLayoutAlign="start center">
+  <div class="header-container" fxLayout="row" fxLayoutAlign="space-between center">
+    <span class="shop-logo">LOGO</span>
+    <pharma-search-form></pharma-search-form>
+    <pharma-toolbox></pharma-toolbox>
+  </div>
+  <div class="body-container">
+    <div class="menu-container" fxLayout="row" fxLayoutAlign="center center">
+      <pharma-main-menu></pharma-main-menu>
+    </div>
+    <div class="page-container" fxLayout="row" fxLayoutAlign="center center">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

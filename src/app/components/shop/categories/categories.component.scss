@@ -1,5 +1,7 @@
 .categories-card {
   margin: 10px;
-  width: 200px;
-  min-height: 318px;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  width: 230px;
 }

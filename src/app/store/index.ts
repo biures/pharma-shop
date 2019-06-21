@@ -1,28 +1,19 @@
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
-} from '@ngrx/store';
+import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { environment } from '../../environments/environment';
-import { ProductReducers } from './product/product.reducer';
-import { EntityState } from '@ngrx/entity';
-import { Product } from '../models/product.model';
+import { ProductReducers, ProductState } from './product/product.reducer';
+import { FavoriteReducers, FavoriteState } from './favorites/favorite.reducer';
+import { CartReducers, CartState } from './cart/cart.reducer';
 
 export interface AppState {
   productsState: ProductState;
-}
-
-export interface ProductState extends EntityState<Product> {
-  filtering: {
-    searchQuery: string;
-    categories: string[];
-  };
+  favoritesState: FavoriteState;
+  cartState: CartState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  productsState: ProductReducers
+  productsState: ProductReducers,
+  favoritesState: FavoriteReducers,
+  cartState: CartReducers
 };
 
 
