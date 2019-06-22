@@ -3,6 +3,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { LoadProducts, LoadProductsFail, LoadProductsSuccess, ProductActionTypes } from './product.actions';
 import { map } from 'rxjs/operators';
 import { mockedProducts } from '../../mocks/product-list.mock';
+import { mockedProductsWithCh } from '../../mocks/product-characteristics.mock';
 
 @Injectable()
 export class ProductEffects {
@@ -11,8 +12,7 @@ export class ProductEffects {
   loadProducts$ = this.actions$.pipe(
     ofType<LoadProducts>(ProductActionTypes.LoadProducts),
     map(() => {
-      const products = mockedProducts;
-      return new LoadProductsSuccess(products);
+      return new LoadProductsSuccess(mockedProductsWithCh);
     })
   );
 

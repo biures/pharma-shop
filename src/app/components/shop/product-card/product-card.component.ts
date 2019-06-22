@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../../models/product.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../store';
@@ -10,12 +10,17 @@ import { AddProductToCartAction } from '../../../store/cart/cart.actions';
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss']
 })
-export class ProductCardComponent {
+export class ProductCardComponent implements OnInit {
 
   isFav = false;
 
+  isOnStock: string;
+
   @Input()
   public product: Product;
+
+  ngOnInit() {
+  }
 
   toggleFav() {
     if (!this.isFav) {

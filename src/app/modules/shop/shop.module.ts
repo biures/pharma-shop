@@ -23,6 +23,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FlexModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { shopRoutes } from './shop.routes';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { shopRoutes } from './shop.routes';
     BrowserAnimationsModule,
     FlexModule,
     RouterModule.forChild(shopRoutes),
-    MatExpansionModule
+    MatExpansionModule,
+    SharedModule
   ],
   exports: [
     ProductCardComponent,

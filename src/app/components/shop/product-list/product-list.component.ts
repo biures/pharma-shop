@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../models/product.model';
 import { AppState } from '../../../store';
 import { Store } from '@ngrx/store';
-import { selectAllProductsBasedOnCategories } from '../../../store/product/product.selectors';
+import { selectAllProductsBasedOnCharacteristics } from '../../../store/product/product.selectors';
 
 @Component({
   selector: 'pharma-product-list',
@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
   public productList: Product[] = [];
 
   ngOnInit() {
-    this.store.select(selectAllProductsBasedOnCategories).subscribe(allProducts => {
+    this.store.select(selectAllProductsBasedOnCharacteristics).subscribe(allProducts => {
       this.productList = allProducts;
     });
   }

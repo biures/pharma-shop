@@ -1,0 +1,14 @@
+<mat-expansion-panel
+  *ngIf="productCharacteristicValues.length > 0"
+  [expanded]="true"
+  class="characteristic-card">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{ characteristic.key.toLowerCase() | capitalize }}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div *ngFor="let characteristicValue of productDistinctCharacteristicValues">
+    <mat-checkbox color="primary" (change)="checkCategory($event, characteristicValue)">{{ characteristicValue | capitalize }}</mat-checkbox>
+    <br>
+  </div>
+</mat-expansion-panel>

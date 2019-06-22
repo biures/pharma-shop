@@ -1,0 +1,6 @@
+<div class="availability-badge"
+     [ngClass]="{'red': stockCount === 0,
+     'yellow': stockCount > 0 && stockCount < 5,
+      'green': stockCount >= 5}"
+     fxLayout="row"
+     fxLayoutAlign="center center"> {{ badgeMessage | capitalize }} </div>

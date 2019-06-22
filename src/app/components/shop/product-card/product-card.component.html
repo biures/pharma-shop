@@ -16,8 +16,12 @@
     <mat-card-content>{{ product.category }}</mat-card-content>
     <mat-card-content class="price-content">{{ product.price | number: '.1-3'}} Lei</mat-card-content>
 
+    <pharma-availability-badge [stockCount]="product.stock"></pharma-availability-badge>
+
     <mat-card-actions>
-      <button mat-stroked-button color="primary" (click)="addToCart()">ADAUGA</button>
+      <button mat-stroked-button color="primary"
+              [disabled]="product.stock === 0"
+              (click)="addToCart()">ADAUGA</button>
     </mat-card-actions>
 
   </div>

@@ -1,0 +1,19 @@
+.availability-badge {
+  padding: 4px 6px;
+  border-radius: 5%;
+  width: auto;
+  height: 20px;
+  color: white;
+
+  &.red {
+    background-color: #e51730;
+  }
+
+  &.green {
+    background-color: #558e22
+  }
+
+  &.yellow {
+    background-color: #ff9433
+  }
+}

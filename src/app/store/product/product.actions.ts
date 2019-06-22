@@ -1,5 +1,6 @@
-import {Action} from '@ngrx/store';
-import {Product} from '../../models/product.model';
+import { Action } from '@ngrx/store';
+import { Product } from '../../models/product.model';
+import { Characteristic } from '../../models/smodels/characteristic.model';
 
 export enum ProductActionTypes {
   LoadProducts = '[Product] Load Products',
@@ -7,6 +8,8 @@ export enum ProductActionTypes {
   LoadProductsFail = '[Product] Load Products Fail',
   AddCategoryFilter = '[Product] Add Category Filter',
   RemoveCategoryFilter = '[Product] Remove Category Filter',
+  AddCharacteristicFilter = '[Product] Add Characteristic Filter',
+  RemoveCharacteristicFilter = '[Product] Remove Characteristic Filter',
   ChangeSearchQuery = '[Product] Change search query'
 }
 
@@ -38,14 +41,28 @@ export class ChangeSearchQuery implements Action {
 export class AddCategoryFilter implements Action {
   readonly type = ProductActionTypes.AddCategoryFilter;
 
-  constructor(public category: string){
+  constructor(public category: string) {
   }
 }
 
 export class RemoveCategoryFilter implements Action {
   readonly type = ProductActionTypes.RemoveCategoryFilter;
 
-  constructor(public category: string){
+  constructor(public category: string) {
+  }
+}
+
+export class AddCharacteristicFilter implements Action {
+  readonly type = ProductActionTypes.AddCharacteristicFilter;
+
+  constructor(public characteristic: Characteristic) {
+  }
+}
+
+export class RemoveCharacteristicFilter implements Action {
+  readonly type = ProductActionTypes.RemoveCharacteristicFilter;
+
+  constructor(public characteristic: Characteristic) {
   }
 }
 
@@ -55,4 +72,6 @@ export type ProductActions =
   LoadProductsFail |
   ChangeSearchQuery |
   AddCategoryFilter |
-  RemoveCategoryFilter;
+  RemoveCategoryFilter |
+  AddCharacteristicFilter |
+  RemoveCharacteristicFilter;

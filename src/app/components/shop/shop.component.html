@@ -1,4 +1,9 @@
 <div class="body-container" fxLayout="row" fxLayoutAlign="center start">
-  <pharma-categories></pharma-categories>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <pharma-categories></pharma-categories>
+    <div *ngFor="let characteristic of distinctCharacteristics | async">
+      <pharma-characteristic-panel [characteristic]="characteristic"></pharma-characteristic-panel>
+    </div>
+  </div>
   <pharma-product-list></pharma-product-list>
 </div>

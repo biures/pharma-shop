@@ -7,7 +7,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
-  MatDividerModule,
+  MatDividerModule, MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
@@ -19,12 +19,18 @@ import { FlexModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ToolboxComponent } from '../../components/shared/toolbox/toolbox.component';
+import { CharacteristicPanelComponent } from '../../components/shared/characteristic-panel/characteristic-panel.component';
+import { CapitalizePipe } from '../../utils/capitalize.pipe';
+import { AvailabilityBadgeComponent } from '../../components/shared/availability-badge/availability-badge.component';
 
 @NgModule({
   declarations: [
     SearchFormComponent,
     MainMenuComponent,
-    ToolboxComponent
+    ToolboxComponent,
+    CharacteristicPanelComponent,
+    AvailabilityBadgeComponent,
+    CapitalizePipe
   ],
   imports: [
     CommonModule,
@@ -42,13 +48,17 @@ import { ToolboxComponent } from '../../components/shared/toolbox/toolbox.compon
     MatToolbarModule,
     MatCardModule,
     MatBadgeModule,
+    MatExpansionModule,
     FlexModule,
     RouterModule
   ],
   exports: [
     SearchFormComponent,
     MainMenuComponent,
-    ToolboxComponent
+    ToolboxComponent,
+    CharacteristicPanelComponent,
+    AvailabilityBadgeComponent,
+    CapitalizePipe
   ]
 })
 export class SharedModule {
