@@ -52,9 +52,11 @@ export const selectAllProductsBasedOnCharacteristics = createSelector(
     if (characteristics === undefined || characteristics.length === 0) {
       return products;
     } else {
-      let filteredProducts = [];
+      let filteredProducts = products;
+
       characteristics.forEach(characteristic => {
-        filteredProducts = filteredProducts.concat(products.filter(product => {
+
+        filteredProducts = filteredProducts.filter(product => {
           let condition = false;
 
           product.characteristics.forEach((productCharacteristic: Characteristic) => {
@@ -64,7 +66,7 @@ export const selectAllProductsBasedOnCharacteristics = createSelector(
           });
 
           return condition;
-        }));
+        });
       });
 
       return filteredProducts;
@@ -94,6 +96,21 @@ export const selectAllCharacteristics = createSelector(
     });
 
     return totalCharacteristicsSet;
+  }
+);
+
+export const selectDisabledCharacteristics = createSelector(
+  [selectAllCharacteristics, selectAllProductsBasedOnCharacteristics],
+  (allCharacteristics, allProducts) => {
+    let finalCharacteristics: Characteristic[] = Array.from(allCharacteristics);
+
+    allProducts.forEach(product => {
+      product.characteristics.forEach(actualChar => {
+        finalCharacteristics = finalCharacteristics.filter(char => !compareCharacteristics(actualChar, char));
+      });
+    });
+
+    return finalCharacteristics;
   }
 );
 

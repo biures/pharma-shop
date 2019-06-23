@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../store';
-import { selectAllCharacteristics } from '../../../store/product/product.selectors';
+import { selectAllCharacteristics, selectDisabledCharacteristics } from '../../../store/product/product.selectors';
 import { AddCharacteristicFilter, RemoveCharacteristicFilter } from '../../../store/product/product.actions';
 import { Characteristic } from '../../../models/smodels/characteristic.model';
 
@@ -13,6 +13,7 @@ import { Characteristic } from '../../../models/smodels/characteristic.model';
 export class CharacteristicPanelComponent implements OnInit {
   productCharacteristicValues: Array<string | number> = [];
   productDistinctCharacteristicValues: Set<string | number>;
+  disabledCharacteristics: Array<Characteristic> = [];
 
   @Input()
   characteristic: Characteristic;
@@ -34,6 +35,11 @@ export class CharacteristicPanelComponent implements OnInit {
     });
 
     this.productDistinctCharacteristicValues = new Set<string | number>(this.productCharacteristicValues.sort((a, b) => a < b ? -1 : 1));
+
+
+    this.store.select(selectDisabledCharacteristics).subscribe(disabledCharacteristics => {
+      this.disabledCharacteristics = disabledCharacteristics.filter(disabledChar => disabledChar.id === this.characteristic.id);
+    });
   }
 
   checkCategory(event, category: string) {
@@ -42,5 +48,17 @@ export class CharacteristicPanelComponent implements OnInit {
     } else {
       this.store.dispatch(new RemoveCharacteristicFilter({...this.characteristic, value: category}));
     }
+  }
+
+  isCharacteristicDisabled(charValue: string | number) {
+    let condition = false;
+
+    this.disabledCharacteristics.forEach(disabledChar => {
+      if (charValue === disabledChar.value) {
+        condition = true;
+      }
+    });
+
+    return condition;
   }
 }

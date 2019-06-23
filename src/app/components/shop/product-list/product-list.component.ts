@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../models/product.model';
 import { AppState } from '../../../store';
 import { Store } from '@ngrx/store';
-import { selectAllProductsBasedOnCharacteristics } from '../../../store/product/product.selectors';
+import { selectAllProductsBasedOnCharacteristics, selectDisabledCharacteristics } from '../../../store/product/product.selectors';
 
 @Component({
   selector: 'pharma-product-list',
