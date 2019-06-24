@@ -7,7 +7,7 @@
   </div>
 
   <div class="toolbox-products" fxLayout="row" fxLayoutAlign="center center">
-    <button mat-button>
+    <button mat-button [favoriteTooltip]="'blabla'">
       <mat-icon
         [matBadge]="favoritesCount | async"
         matBadgeSize="small"

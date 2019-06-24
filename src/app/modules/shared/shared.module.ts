@@ -22,6 +22,9 @@ import { ToolboxComponent } from '../../components/shared/toolbox/toolbox.compon
 import { CharacteristicPanelComponent } from '../../components/shared/characteristic-panel/characteristic-panel.component';
 import { CapitalizePipe } from '../../utils/capitalize.pipe';
 import { AvailabilityBadgeComponent } from '../../components/shared/availability-badge/availability-badge.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { FavoriteTooltipDirective } from '../../components/shared/toolbox/favorite-tooltip/favorite-tooltip.directive';
+import { FavoriteTooltipComponent } from '../../components/shared/toolbox/favorite-tooltip/favorite-tooltip.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { AvailabilityBadgeComponent } from '../../components/shared/availability
     ToolboxComponent,
     CharacteristicPanelComponent,
     AvailabilityBadgeComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    FavoriteTooltipDirective,
+    FavoriteTooltipComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +55,8 @@ import { AvailabilityBadgeComponent } from '../../components/shared/availability
     MatBadgeModule,
     MatExpansionModule,
     FlexModule,
-    RouterModule
+    RouterModule,
+    OverlayModule
   ],
   exports: [
     SearchFormComponent,
@@ -58,7 +64,9 @@ import { AvailabilityBadgeComponent } from '../../components/shared/availability
     ToolboxComponent,
     CharacteristicPanelComponent,
     AvailabilityBadgeComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    FavoriteTooltipDirective,
+    FavoriteTooltipComponent
   ]
 })
 export class SharedModule {
